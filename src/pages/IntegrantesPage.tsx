@@ -50,15 +50,6 @@ const IntegrantesPage = () => {
       
       <section className="flex flex-wrap justify-center gap-8 md:gap-12">
         <IntegranteCard 
-          nome="Pietro Abrahamian"
-          rm="561469"
-          turma="1TDSPG"
-          funcao="Dev Front-End"
-          imgUrl="/assets/img/pietro.jpg" // Coloque as imagens na pasta /public/assets/img
-          githubUrl="https://github.com/PietroAbrahamian"
-          linkedinUrl="https://www.linkedin.com/in/pietro-abrahamian/"
-        />
-        <IntegranteCard 
           nome="Gabriel Martins"
           rm="562194"
           turma="1TDSPG"
