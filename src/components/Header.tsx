@@ -23,31 +23,31 @@ const Header: React.FC = () => {
           {/* Logo */}
           <div className="flex items-center">
             <Link to="/" className="flex items-center">
-              <img 
-                src="/logoHCFacil.png" 
-                alt="HC Facil Logo" 
-                className="w-32 h-12 md:w-40 md:h-16 object-contain" 
+              <img
+                src="/logoHCFacil.png"
+                alt="HC Facil Logo"
+                className="w-32 h-12 md:w-40 md:h-16 object-contain"
               />
             </Link>
           </div>
-          
+
           {/* Menu para desktop */}
           <nav className="hidden md:block">
             <ul className="flex space-x-6 lg:space-x-8 justify-center items-center">
               <li>
-                <a href="#" className="text-gray-700 hover:text-blue-600 font-medium transition-colors py-2 border-b-2 border-transparent hover:border-blue-600">
-                  FUNDADORES
-                </a>
+                <Link to="/integrantes" className="text-gray-700 hover:text-blue-600 font-medium transition-colors py-2 border-b-2 border-transparent hover:border-blue-600">
+                  INTEGRANTES
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-gray-700 hover:text-blue-600 font-medium transition-colors py-2 border-b-2 border-transparent hover:border-blue-600">
-                  CONTATOS
-                </a>
+                <Link to="/contato" className="text-gray-700 hover:text-blue-600 font-medium transition-colors py-2 border-b-2 border-transparent hover:border-blue-600">
+                  CONTATO
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-gray-700 hover:text-blue-600 font-medium transition-colors py-2 border-b-2 border-transparent hover:border-blue-600">
+                <Link to="/faq" className="text-gray-700 hover:text-blue-600 font-medium transition-colors py-2 border-b-2 border-transparent hover:border-blue-600">
                   FAQ
-                </a>
+                </Link>
               </li>
               <li>
                 <button 
@@ -87,31 +87,31 @@ const Header: React.FC = () => {
           <nav className="md:hidden mt-4 pb-2 border-t border-gray-200">
             <ul className="flex flex-col space-y-3 pt-3">
               <li>
-                <a 
-                  href="#" 
+                <Link 
+                  to="/integrantes" 
                   className="block text-gray-700 hover:text-blue-600 font-medium transition-colors py-2"
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  FUNDADORES
-                </a>
+                  INTEGRANTES
+                </Link>
               </li>
               <li>
-                <a 
-                  href="#" 
+                <Link 
+                  to="/contato" 
                   className="block text-gray-700 hover:text-blue-600 font-medium transition-colors py-2"
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  CONTATOS
-                </a>
+                  CONTATO
+                </Link>
               </li>
               <li>
-                <a 
-                  href="#" 
+                <Link 
+                  to="/faq" 
                   className="block text-gray-700 hover:text-blue-600 font-medium transition-colors py-2"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   FAQ
-                </a>
+                </Link>
               </li>
               <li>
                 <button 
