@@ -7,6 +7,8 @@ import MainLayout from './components/MainLayout';
 import WelcomePage from './pages/WelcomePage';
 import LoginPage from './pages/LoginPage';
 import HomePage from './pages/HomePage';
+import IntegrantesPage from './pages/IntegrantesPage';
+import ContatoPage from './pages/ContatoPage';
 
 function App() {
   return (
@@ -20,6 +22,8 @@ function App() {
           <Route element={<MainLayout />}>
             <Route path="/" element={<HomePage />} />
             <Route path="/login" element={<LoginPage />} />
+            <Route path="/integrantes" element={<IntegrantesPage />} />
+            <Route path="/contato" element={<ContatoPage />} />
            
             
           </Route>

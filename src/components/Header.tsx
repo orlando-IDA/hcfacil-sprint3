@@ -1,13 +1,12 @@
 // src/components/Header.tsx
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 
 const Header: React.FC = () => {
   const navigate = useNavigate();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const handleLogout = () => {
-    // Lógica de logout aqui
     alert('Saindo...');
     navigate('/welcome');
   };
@@ -16,48 +15,63 @@ const Header: React.FC = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  // --- ESTILOS ATUALIZADOS COM O EFEITO DE UNDERLINE ---
+  const baseLinkStyle = "relative font-medium transition-colors duration-300 py-2 after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:bg-blue-600 after:transition-all after:duration-300";
+  
+  // Estilo ativo: força o underline a ter 100% de largura
+  const activeLinkStyle = "text-blue-600 font-bold after:w-full";
+  
+  // Estilo inativo: o underline começa com 0 e vai para 100% no hover
+  const inactiveLinkStyle = "text-gray-600 hover:text-blue-600 after:w-0 hover:after:w-full";
+
+
   return (
-    <header className="bg-white shadow-md">
+    <header className="bg-white shadow-md sticky top-0 z-10">
       <div className="container mx-auto px-4 py-3">
         <div className="flex justify-between items-center">
           {/* Logo */}
-          <div className="flex items-center">
-            <Link to="/" className="flex items-center">
-              <img
-                src="/logoHCFacil.png"
-                alt="HC Facil Logo"
-                className="w-32 h-12 md:w-40 md:h-16 object-contain"
-              />
-            </Link>
-          </div>
+          <NavLink to="/" className="flex items-center">
+            <img
+              src="/logoHCFacil.png"
+              alt="HC Facil Logo"
+              className="w-32 h-12 md:w-40 md:h-16 object-contain"
+            />
+          </NavLink>
 
           {/* Menu para desktop */}
-          <nav className="hidden md:block">
-            <ul className="flex space-x-6 lg:space-x-8 justify-center items-center">
+          <nav className="hidden md:flex items-center gap-6 lg:gap-8">
+            <ul className="flex items-center gap-6 lg:gap-8">
               <li>
-                <Link to="/integrantes" className="text-gray-700 hover:text-blue-600 font-medium transition-colors py-2 border-b-2 border-transparent hover:border-blue-600">
-                  INTEGRANTES
-                </Link>
-              </li>
-              <li>
-                <Link to="/contato" className="text-gray-700 hover:text-blue-600 font-medium transition-colors py-2 border-b-2 border-transparent hover:border-blue-600">
-                  CONTATO
-                </Link>
-              </li>
-              <li>
-                <Link to="/faq" className="text-gray-700 hover:text-blue-600 font-medium transition-colors py-2 border-b-2 border-transparent hover:border-blue-600">
-                  FAQ
-                </Link>
-              </li>
-              <li>
-                <button 
-                  onClick={handleLogout}
-                  className="text-red-600 hover:text-red-800 font-medium transition-colors py-2 border-b-2 border-transparent hover:border-red-600"
+                <NavLink 
+                  to="/integrantes" 
+                  className={({ isActive }) => `${baseLinkStyle} ${isActive ? activeLinkStyle : inactiveLinkStyle}`}
                 >
-                  SAIR
-                </button>
+                  INTEGRANTES
+                </NavLink>
+              </li>
+              <li>
+                <NavLink 
+                  to="/contato" 
+                  className={({ isActive }) => `${baseLinkStyle} ${isActive ? activeLinkStyle : inactiveLinkStyle}`}
+                >
+                  CONTATO
+                </NavLink>
+              </li>
+              <li>
+                <NavLink 
+                  to="/faq" 
+                  className={({ isActive }) => `${baseLinkStyle} ${isActive ? activeLinkStyle : inactiveLinkStyle}`}
+                >
+                  FAQ
+                </NavLink>
               </li>
             </ul>
+            <button 
+              onClick={handleLogout}
+              className="px-4 py-2 text-sm font-semibold text-red-600 border border-red-500 rounded-md hover:bg-red-500 hover:text-white transition-colors duration-300"
+            >
+              SAIR
+            </button>
           </nav>
 
           {/* Botão do menu mobile */}
@@ -66,13 +80,7 @@ const Header: React.FC = () => {
             onClick={toggleMenu}
             aria-label="Abrir menu"
           >
-            <svg 
-              className="w-6 h-6" 
-              fill="none" 
-              stroke="currentColor" 
-              viewBox="0 0 24 24" 
-              xmlns="http://www.w3.org/2000/svg"
-            >
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               {isMenuOpen ? (
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
               ) : (
@@ -82,44 +90,29 @@ const Header: React.FC = () => {
           </button>
         </div>
 
-        {/* Menu mobile */}
+        {/* Menu mobile (não incluí o hover de underline aqui para manter mais simples no toque) */}
         {isMenuOpen && (
-          <nav className="md:hidden mt-4 pb-2 border-t border-gray-200">
-            <ul className="flex flex-col space-y-3 pt-3">
+          <nav className="md:hidden mt-4 pt-4 border-t border-gray-200">
+            <ul className="flex flex-col gap-4">
               <li>
-                <Link 
-                  to="/integrantes" 
-                  className="block text-gray-700 hover:text-blue-600 font-medium transition-colors py-2"
-                  onClick={() => setIsMenuOpen(false)}
-                >
+                <NavLink to="/integrantes" className={({ isActive }) => `block py-2 ${isActive ? "text-blue-600 font-bold" : "text-gray-700"}`} onClick={() => setIsMenuOpen(false)}>
                   INTEGRANTES
-                </Link>
+                </NavLink>
               </li>
               <li>
-                <Link 
-                  to="/contato" 
-                  className="block text-gray-700 hover:text-blue-600 font-medium transition-colors py-2"
-                  onClick={() => setIsMenuOpen(false)}
-                >
+                <NavLink to="/contato" className={({ isActive }) => `block py-2 ${isActive ? "text-blue-600 font-bold" : "text-gray-700"}`} onClick={() => setIsMenuOpen(false)}>
                   CONTATO
-                </Link>
+                </NavLink>
               </li>
               <li>
-                <Link 
-                  to="/faq" 
-                  className="block text-gray-700 hover:text-blue-600 font-medium transition-colors py-2"
-                  onClick={() => setIsMenuOpen(false)}
-                >
+                <NavLink to="/faq" className={({ isActive }) => `block py-2 ${isActive ? "text-blue-600 font-bold" : "text-gray-700"}`} onClick={() => setIsMenuOpen(false)}>
                   FAQ
-                </Link>
+                </NavLink>
               </li>
               <li>
                 <button 
-                  onClick={() => {
-                    handleLogout();
-                    setIsMenuOpen(false);
-                  }}
-                  className="block text-red-600 hover:text-red-800 font-medium transition-colors py-2 w-full text-left"
+                  onClick={handleLogout}
+                  className="mt-4 w-full px-4 py-2 font-semibold text-red-600 border border-red-500 rounded-md hover:bg-red-500 hover:text-white transition-colors duration-300"
                 >
                   SAIR
                 </button>
