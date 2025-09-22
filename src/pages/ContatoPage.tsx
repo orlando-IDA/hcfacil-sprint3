@@ -11,7 +11,6 @@ const ContatoCard = ({ iconClass, title, text }: {
     : 'bg-red-100 text-red-600';
 
   return (
-    // MUDANÇA AQUI: padding aumentado de p-4 para p-6 para deixar o card maior
     <div className="border border-gray-200 rounded-xl p-6 w-full max-w-md flex items-center gap-4 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 cursor-pointer bg-white">
       <div className={`w-16 h-16 rounded-full flex items-center justify-center ${iconBgColor}`}>
         <i className={`${iconClass} text-3xl`}></i>
@@ -28,7 +27,6 @@ const ContatoCard = ({ iconClass, title, text }: {
 // Componente principal da página de Contato
 const ContatoPage = () => {
   return (
-    // MUDANÇA AQUI: padding horizontal (px) agora é responsivo
     <main className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 flex flex-col lg:flex-row items-center justify-center gap-12 min-h-[80vh]">
       
       <section className="w-full lg:w-1/2 flex flex-col items-center lg:items-start gap-8">

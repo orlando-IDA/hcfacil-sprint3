@@ -56,7 +56,6 @@ const IntegranteCard = ({ nome, rm, turma, funcao, imgUrl, githubUrl, linkedinUr
 
 // Componente principal da página
 const IntegrantesPage = () => {
-  // (O resto do componente permanece o mesmo)
   return (
     <main className="container mx-auto px-4 py-8 flex flex-col items-center gap-8">
       <h1 className="text-3xl md:text-4xl font-bold text-gray-800">Integrantes</h1>
