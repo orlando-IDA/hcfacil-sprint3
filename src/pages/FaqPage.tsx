@@ -1,6 +1,6 @@
 
 import React from 'react';
-
+import { useState } from 'react';
 const faqData = [
  {
     question: 'Onde estão os vídeos?',
@@ -30,9 +30,15 @@ const faqData = [
 
 
 const FaqItem = ({ question, answer }: { question: string; answer: string }) => {
+
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <div className="border-b border-gray-200 py-4">
-      <button className="w-full flex justify-between items-center text-left text-lg font-semibold text-gray-800">
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        className="w-full flex justify-between items-center text-left text-lg font-semibold text-gray-800 focus:outline-none"
+      >
         <span>{question}</span>
         <svg
           className="w-5 h-5"
@@ -45,14 +51,17 @@ const FaqItem = ({ question, answer }: { question: string; answer: string }) => 
         </svg>
       </button>
       
-      <div className="mt-3 text-gray-600">
-        <p>{answer}</p>
-      </div>
+      {}
+      {isOpen && (
+        <div className="mt-3 text-gray-600">
+          <p>{answer}</p>
+        </div>
+      )}
     </div>
   );
 };
 
-// --- Componente Principal da Página FAQ ---
+
 const FaqPage = () => {
   return (
     <main className="container mx-auto px-4 py-8">
