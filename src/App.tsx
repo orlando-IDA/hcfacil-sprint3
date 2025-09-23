@@ -9,6 +9,7 @@ import LoginPage from './pages/LoginPage';
 import HomePage from './pages/HomePage';
 import IntegrantesPage from './pages/IntegrantesPage';
 import ContatoPage from './pages/ContatoPage';
+import FaqPage from './pages/FaqPage';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
             <Route path="/login" element={<LoginPage />} />
             <Route path="/integrantes" element={<IntegrantesPage />} />
             <Route path="/contato" element={<ContatoPage />} />
+            <Route path="/faq" element={<FaqPage />} />
            
             
           </Route>
