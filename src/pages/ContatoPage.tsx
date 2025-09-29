@@ -1,6 +1,3 @@
-// src/pages/ContatoPage.tsx
-
-// Componente reutilizável para cada card de contato
 const ContatoCard = ({ iconClass, title, text }: {
   iconClass: string;
   title: string;

@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 
 const faqData = [
@@ -36,19 +35,18 @@ const faqData = [
   }
 ];
 
-
 const FaqItem = ({ question, answer }: { question: string; answer: React.ReactNode }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="border-b border-gray-200 py-4">
+    <div className="border-b border-gray-300/50 py-4">
       <button
         onClick={() => setIsOpen(!isOpen)}
         className="w-full flex justify-between items-center text-left text-lg font-semibold text-gray-800 focus:outline-none"
       >
         <span>{question}</span>
         <svg
-          className={w-5 h-5 transform transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}}
+          className={`w-5 h-5 transform transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -59,7 +57,7 @@ const FaqItem = ({ question, answer }: { question: string; answer: React.ReactNo
       </button>
       
       {isOpen && (
-        <div className="mt-3 text-gray-600">
+        <div className="mt-3 text-gray-700">
           <p>{answer}</p>
         </div>
       )}
@@ -67,16 +65,17 @@ const FaqItem = ({ question, answer }: { question: string; answer: React.ReactNo
   );
 };
 
-
 const FaqPage = () => {
   return (
-    <main className="container mx-auto px-4 py-8">
+    <main className="relative container mx-auto px-4 py-8">
+     
+     <div className="fixed inset-0 z-[-1] bg-[url('/assets/img/img-faq.svg')] bg-[length:75%] bg-center bg-no-repeat opacity-40"></div>
+
       <div className="max-w-3xl mx-auto">
         <h1 className="text-4xl font-bold text-gray-800 mb-8 text-center">
           Perguntas Frequentes (FAQ)
         </h1>
-        
-        <div className="bg-white p-6 rounded-lg shadow-md">
+        <div className="bg-white/80 backdrop-blur-sm p-6 rounded-lg shadow-xl">
           {faqData.map((item, index) => (
             <FaqItem key={index} question={item.question} answer={item.answer} />
           ))}

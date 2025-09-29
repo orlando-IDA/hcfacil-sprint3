@@ -1,4 +1,3 @@
-// src/components/LoginRegister/LoginRegister.tsx
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useForm, type SubmitHandler } from 'react-hook-form';
@@ -10,7 +9,6 @@ const LoginRegister: React.FC = () => {
 
 
   // --- HOOK FORM PARA CADASTRO ---
-  // Criamos uma instância do useForm específica para o formulário de cadastro
   const {
     register: registerCadastro,
     handleSubmit: handleSubmitCadastro,
@@ -43,7 +41,6 @@ const LoginRegister: React.FC = () => {
 
   // Função que é executada APÓS a validação do formulário de login
   const onSubmitLogin: SubmitHandler<LoginData> = (data) => {
-    // Aqui você adicionaria a lógica para verificar se o usuário existe
     console.log('Dados de login válidos:', data);
     alert('Login realizado com sucesso!');
     navigate('/');
@@ -69,7 +66,6 @@ const LoginRegister: React.FC = () => {
           </button>
         </div>
 
-        {/* --- Formulário de Login Refatorado --- */}
         {activeForm === 'login' && (
           // O handleSubmit do hook form valida os campos antes de chamar nossa função onSubmitLogin
           <form onSubmit={handleSubmitLogin(onSubmitLogin)} className="space-y-4">
