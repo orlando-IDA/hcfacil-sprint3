@@ -6,10 +6,10 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import MainLayout from './components/MainLayout';
 import WelcomePage from './pages/WelcomePage';
 import LoginPage from './pages/LoginPage';
-import HomePage from './pages/HomePage';
-import IntegrantesPage from './pages/IntegrantesPage';
-import ContatoPage from './pages/ContatoPage';
-import FaqPage from './pages/FaqPage';
+import HomePage from './pages/Home';
+import IntegrantesPage from './pages/Integrantes';
+import ContatoPage from './pages/Contato';
+import FaqPage from './pages/FAQ';
 
 function App() {
   return (
