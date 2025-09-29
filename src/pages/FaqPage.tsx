@@ -69,7 +69,7 @@ const FaqPage = () => {
   return (
     <main className="relative container mx-auto px-4 py-8">
      
-     <div className="fixed inset-0 z-[-1] bg-[url('/assets/img/img-faq.svg')] bg-[length:75%] bg-center bg-no-repeat opacity-40"></div>
+     <div className="fixed inset-0 z-[-1] bg-[url('/assets/img/img-faq.svg')] bg-[length:120%_auto] md:bg-[length:75%] bg-center bg-no-repeat opacity-40"></div>
 
       <div className="max-w-3xl mx-auto">
         <h1 className="text-4xl font-bold text-gray-800 mb-8 text-center">
