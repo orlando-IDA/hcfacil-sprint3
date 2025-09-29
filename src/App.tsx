@@ -4,8 +4,8 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 // Importando o Layout e as novas Páginas
 import MainLayout from './components/MainLayout';
-import WelcomePage from './pages/WelcomePage';
-import LoginPage from './pages/LoginPage';
+import WelcomePage from './pages/Welcome';
+import LoginPage from './pages/Login';
 import HomePage from './pages/Home';
 import IntegrantesPage from './pages/Integrantes';
 import ContatoPage from './pages/Contato';
