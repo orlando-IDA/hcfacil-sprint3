@@ -1,6 +1,3 @@
-// src/pages/IntegrantesPage.tsx
-
-// Componente para o Card de cada integrante, para reutilização
 const IntegranteCard = ({ nome, rm, turma, funcao, imgUrl, githubUrl, linkedinUrl }: {
   nome: string;
   rm: string;
@@ -17,15 +14,11 @@ const IntegranteCard = ({ nome, rm, turma, funcao, imgUrl, githubUrl, linkedinUr
         className="w-36 h-36 md:w-40 md:h-40 bg-cover bg-center rounded-full border-4 border-[#00AAAA]"
         style={{ backgroundImage: `url(${imgUrl})` }}
       />
-
-      {/* Informações de texto */}
       <div className="flex flex-col gap-1">
         <h3 className="text-xl md:text-2xl font-semibold">{nome}</h3>
         <p className="font-light">{`RM: ${rm} | ${turma}`}</p>
         <h4 className="font-light text-lg md:text-xl">{funcao}</h4>
       </div>
-
-      {/* SEÇÃO DOS ÍCONES */}
       <ul className="w-full pt-6 flex items-center justify-center gap-6 border-t-2 border-[#00AAAA]">
         <li>
           <a 
