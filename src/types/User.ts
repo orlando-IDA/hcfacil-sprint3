@@ -24,3 +24,8 @@ export interface HomeCardProps {
   imageUrl: string;
   linkTo: string;
 }
+
+export interface VideoCardProps {
+  title: string;
+  youtubeUrl: string;
+}
