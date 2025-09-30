@@ -11,6 +11,7 @@ import IntegrantesPage from './pages/Integrantes';
 import ContatoPage from './pages/Contato';
 import FaqPage from './pages/FAQ';
 import VideosPage from './pages/Video';
+import Error from './pages/Error';
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
             <Route path="/contato" element={<ContatoPage />} />
             <Route path="/faq" element={<FaqPage />} />
             <Route path="/videos" element={<VideosPage />} />
+            <Route path="*" element={<Error />} />
            
             
           </Route>
