@@ -17,3 +17,10 @@ export interface RegisterData {
   cadCPF: string;
   cadTelefone: string;
 }
+
+export interface HomeCardProps {
+  title: string;
+  description?: string;
+  imageUrl: string;
+  linkTo: string;
+}
