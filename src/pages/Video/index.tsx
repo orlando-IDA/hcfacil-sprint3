@@ -44,8 +44,6 @@ const VideoCard = ({ title, youtubeUrl }: VideoCardProps) => {
   );
 };
 
-
-// --- Componente Principal da Página de Vídeos ---
 const VideosPage = () => {
   return (
     <main className="container mx-auto px-4 py-8">
