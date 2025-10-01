@@ -125,7 +125,7 @@ Para rodar este projeto localmente, siga os passos abaixo:
 
 | Nome Completo | RM | Turma |
 | :--- | :---: | :---: |
-| Gabriel Martins | 562194 | 1TDSPG |
+| Gabriel Lourenço Martins | 562194 | 1TDSPG |
 | Orlando Gonçalves | 561584 | 1TDSPG |
 
 ---
@@ -133,4 +133,4 @@ Para rodar este projeto localmente, siga os passos abaixo:
 ## 🔗 Links do Projeto
 
 * **Link do Repositório GitHub:** `https://github.com/orlando-IDA/hcfacil-sprint3.git`
-* **Vídeo de Apresentação (YouTube):** `https://youtu.be/0KHCOVsveHY`
+* **Vídeo de Apresentação (YouTube):** `https://youtu.be/kihM0oGQTtI`
