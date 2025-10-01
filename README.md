@@ -1,24 +1,24 @@
-# 🏥 HC Fácil
+🏥 HC Fácil
 
-## 🎯 Objetivo do Projeto
+🎯 **Objetivo do Projeto**
 
-O HC Fácil é uma aplicação web desenvolvida como parte do Challenge da FIAP. O principal objetivo do projeto é **reduzir a taxa de abstenção em consultas online no Hospital das Clínicas**, oferecendo uma plataforma mais simples e eficiente para que os pacientes possam gerenciar seus agendamentos e tirar dúvidas.
+O HC Fácil é uma aplicação web desenvolvida como parte do Challenge da FIAP. O principal objetivo do projeto é reduzir a taxa de abstenção em consultas online no Hospital das Clínicas, oferecendo uma plataforma mais simples e eficiente para que os pacientes possam gerenciar seus agendamentos e tirar dúvidas.
 
-## 🚀 Como Utilizar o Site
+🚀 **Como Utilizar o Site**
 
-### Fluxo de Navegação
+**Fluxo de Navegação**
 
 1. **Página Inicial (Welcome)**
    - Ao acessar o site, você será direcionado para a rota `/welcome`
    - Esta página apresenta o HC Fácil e suas funcionalidades principais
-   - Clique no botão **"Vamos Começar"** para acessar o sistema
+   - Clique no botão "Vamos Começar" para acessar o sistema
 
 2. **Login do Usuário**
    - Na tela de login, insira seus dados:
      - **CPF**: Digite um CPF fictício com até 11 dígitos (apenas números)
      - **Telefone**: Digite um número de telefone fictício com até 11 dígitos (apenas números)
    - Ambos os campos são validados para terem exatamente 11 dígitos
-   - Clique em **"Entrar"** para acessar o sistema
+   - Clique em "Entrar" para acessar o sistema
 
 3. **Página Principal (Home)**
    - Após o login bem-sucedido, você será redirecionado para a `/home`
@@ -28,67 +28,72 @@ O HC Fácil é uma aplicação web desenvolvida como parte do Challenge da FIAP.
      - Entrar em contato com o suporte
      - Conhecer a equipe desenvolvedora
 
-## 🛠️ Tecnologias Utilizadas
+🛠️ **Tecnologias Utilizadas**
 
-* **Front-End:**
-    * React (com Vite)
-    * TypeScript
-* **Estilização:**
-    * TailwindCSS
-* **Roteamento:**
-    * React Router DOM
-* **Formulários:**
-    * React Hook Form
+- **Front-End:**
+  - React (com Vite)
+  - TypeScript
+- **Estilização:**
+  - TailwindCSS
+- **Roteamento:**
+  - React Router DOM
+- **Formulários:**
+  - React Hook Form
+- **Fontes:**
+  - @fontsource/poppins (local)
 
-## 📂 Estrutura de Pastas
+📂 **Estrutura de Pastas**
+
 
 ```bash
 HCFacil/
 ├── public/
-│   └── assets/
-│       └── imgs/
-│           ├── logoHCFacil.ico
-│           ├── logoHCFacil.png
-│           └── medico-bemvindo.png
+│ └── assets/
+│ └── imgs/
+│ ├── logoHCFacil.ico
+│ ├── logoHCFacil.png
+│ └── medico-bemvindo.png
 └── src/
-    ├── components/
-    │   ├── LoginRegister/
-    │   │   └── LoginRegister.tsx
-    │   ├── Welcome/
-    │   │   └── Welcome.tsx
-    │   ├── Header.tsx
-    │   └── MainLayout.tsx
-    ├── pages/
-    │   ├── Contato/
-    │   │   └── index.tsx
-    │   ├── Error/
-    │   │   └── index.tsx
-    │   ├── FAQ/
-    │   │   └── index.tsx
-    │   ├── ForgotPass/
-    │   │   └── index.tsx
-    │   ├── Home/
-    │   │   └── index.tsx
-    │   ├── IntegranteDetail/
-    │   │   └── index.tsx
-    │   ├── Integrantes/
-    │   │   └── index.tsx
-    │   ├── Login/
-    │   │   └── index.tsx
-    │   ├── MarqueConsulta/
-    │   │   └── index.tsx
-    │   ├── Video/
-    │   │   └── index.tsx
-    │   └── Welcome/
-    │       └── index.tsx
-    ├── types/
-    │   └── User.ts
-    ├── App.css
-    ├── App.tsx
-    ├── index.css
-    ├── main.tsx
-    └── vite-env.d.ts
-
+├── components/
+│ ├── LoginRegister/
+│ │ └── LoginRegister.tsx
+│ ├── Welcome/
+│ │ └── Welcome.tsx
+│ ├── Header.tsx
+│ └── MainLayout.tsx
+├── pages/
+│ ├── Contato/
+│ │ └── index.tsx
+│ ├── Error/
+│ │ └── index.tsx
+│ ├── FAQ/
+│ │ └── index.tsx
+│ ├── ForgotPass/
+│ │ └── index.tsx
+│ ├── Home/
+│ │ └── index.tsx
+│ ├── IntegranteDetail/
+│ │ └── index.tsx
+│ ├── Integrantes/
+│ │ └── index.tsx
+│ ├── Login/
+│ │ └── index.tsx
+│ ├── MarqueConsulta/
+│ │ └── index.tsx
+│ ├── Sobre/
+│ │ └── index.tsx
+│ ├── Video/
+│ │ └── index.tsx
+│ └── Welcome/
+│ └── index.tsx
+├── types/
+│ └── User.ts
+├── App.css
+├── App.tsx
+├── index.css
+├── main.tsx
+└── vite-env.d.ts
+```
 ## ⚙️ Rodando o Projeto
 
 Para rodar este projeto localmente, siga os passos abaixo:
@@ -100,7 +105,7 @@ Para rodar este projeto localmente, siga os passos abaixo:
 
 2.  **Acesse a pasta do projeto:**
     ```bash
-    cd [NOME-DA-PASTA-DO-PROJETO]
+    cd hcfacil-sprint3
     ```
 
 3.  **Instale as dependências:**
