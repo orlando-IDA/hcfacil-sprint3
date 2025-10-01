@@ -35,6 +35,14 @@ const Header: React.FC = () => {
             <ul className="flex items-center gap-6 lg:gap-8">
               <li>
                 <NavLink 
+                  to="/sobre" 
+                  className={({ isActive }) => `${baseLinkStyle} ${isActive ? activeLinkStyle : inactiveLinkStyle}`}
+                >
+                  SOBRE
+                </NavLink>
+              </li>
+              <li>
+                <NavLink 
                   to="/integrantes" 
                   className={({ isActive }) => `${baseLinkStyle} ${isActive ? activeLinkStyle : inactiveLinkStyle}`}
                 >
@@ -86,6 +94,11 @@ const Header: React.FC = () => {
         {isMenuOpen && (
           <nav className="md:hidden mt-4 pt-4 border-t border-gray-200">
             <ul className="flex flex-col gap-4">
+              <li>
+                <NavLink to="/sobre" className={({ isActive }) => `block py-2 ${isActive ? "text-blue-600 font-bold" : "text-gray-700"}`} onClick={() => setIsMenuOpen(false)}>
+                  SOBRE
+                </NavLink>
+              </li>
               <li>
                 <NavLink to="/integrantes" className={({ isActive }) => `block py-2 ${isActive ? "text-blue-600 font-bold" : "text-gray-700"}`} onClick={() => setIsMenuOpen(false)}>
                   INTEGRANTES

@@ -12,6 +12,7 @@ import VideosPage from './pages/Video';
 import Error from './pages/Error';
 import ForgotPasswordPage from './pages/ForgotPass';
 import MarqueSuaConsultaPage from './pages/MarqueConsulta';
+import SobrePage from './pages/Sobre';
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
             <Route path="/home" element={<HomePage />} />
             <Route path="/integrantes" element={<IntegrantesPage />} />
             <Route path="/integrantes/:id" element={<IntegranteDetail />} />
+            <Route path="/sobre" element={<SobrePage />} />
             <Route path="/contato" element={<ContatoPage />} />
             <Route path="/faq" element={<FaqPage />} />
             <Route path="/videos" element={<VideosPage />} />
