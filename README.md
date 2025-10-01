@@ -42,13 +42,14 @@ O HC Fácil é uma aplicação web desenvolvida como parte do Challenge da FIAP.
 
 ## 📂 Estrutura de Pastas
 
+```bash
 HCFacil/
 ├── public/
-│   assets/
-│    imgs/
-│   ├── logoHCFacil.ico
-│   ├── logoHCFacil.png
-│   └── medico-bemvindo.png
+│   └── assets/
+│       └── imgs/
+│           ├── logoHCFacil.ico
+│           ├── logoHCFacil.png
+│           └── medico-bemvindo.png
 └── src/
     ├── components/
     │   ├── LoginRegister/
@@ -87,8 +88,6 @@ HCFacil/
     ├── index.css
     ├── main.tsx
     └── vite-env.d.ts
-
----
 
 ## ⚙️ Rodando o Projeto
 
