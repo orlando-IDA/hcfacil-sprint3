@@ -14,22 +14,15 @@ const Header: React.FC = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  // --- ESTILOS ATUALIZADOS COM O EFEITO DE UNDERLINE ---
   const baseLinkStyle = "relative font-medium transition-colors duration-300 py-2 after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:bg-blue-600 after:transition-all after:duration-300";
-  
-  // Estilo ativo: força o underline a ter 100% de largura
   const activeLinkStyle = "text-blue-600 font-bold after:w-full";
-  
-  // Estilo inativo: o underline começa com 0 e vai para 100% no hover
   const inactiveLinkStyle = "text-gray-600 hover:text-blue-600 after:w-0 hover:after:w-full";
-
 
   return (
     <header className="bg-white shadow-md sticky top-0 z-10">
       <div className="container mx-auto px-4 py-3">
         <div className="flex justify-between items-center">
-          {/* Logo */}
-          <NavLink to="/" className="flex items-center">
+          <NavLink to="/home" className="flex items-center">
             <img
               src="/logoHCFacil.png"
               alt="HC Facil Logo"
@@ -89,7 +82,7 @@ const Header: React.FC = () => {
           </button>
         </div>
 
-        {/* Menu mobile (não incluí o hover de underline aqui para manter mais simples no toque) */}
+        {/* Menu mobile */}
         {isMenuOpen && (
           <nav className="md:hidden mt-4 pt-4 border-t border-gray-200">
             <ul className="flex flex-col gap-4">
