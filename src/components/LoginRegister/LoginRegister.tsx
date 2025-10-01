@@ -1,52 +1,57 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useForm, type SubmitHandler } from 'react-hook-form';
-import type { RegisterData, LoginData, User } from '../../types/User';// Tipos centralizados
+import type { RegisterData, LoginData, User } from '../../types/User';
 
 const LoginRegister: React.FC = () => {
   const [activeForm, setActiveForm] = useState<'login' | 'cadastro'>('login');
+  const [usersCount, setUsersCount] = useState(0);
+  const [pageLoadTime, setPageLoadTime] = useState<Date | null>(null);
   const navigate = useNavigate();
 
+  useEffect(() => {
+    setPageLoadTime(new Date());
+    const listaUser = JSON.parse(localStorage.getItem('listaUser') || '[]');
+    setUsersCount(listaUser.length);
+  }, []);
 
-  // --- HOOK FORM PARA CADASTRO ---
+  useEffect(() => {
+    if (usersCount > 0) {
+      console.log(`Número de usuários atualizado: ${usersCount}`);
+    }
+  }, [usersCount]);
+
   const {
     register: registerCadastro,
     handleSubmit: handleSubmitCadastro,
     formState: { errors: errorsCadastro },
   } = useForm<RegisterData>();
 
-  // --- HOOK FORM PARA LOGIN ---
-  // E outra instância para o formulário de login, com "apelidos" para não haver conflito de nomes
   const {
     register: registerLogin,
     handleSubmit: handleSubmitLogin,
     formState: { errors: errorsLogin },
   } = useForm<LoginData>();
 
-  // Função que é executada APÓS a validação do formulário de cadastro
   const onSubmitCadastro: SubmitHandler<RegisterData> = (data) => {
     const listaUser: User[] = JSON.parse(localStorage.getItem('listaUser') || '[]');
-
     listaUser.push({
       nomeCad: data.nome,
       emailCad: data.email,
       cpfCad: data.cadCPF,
       telefoneCad: data.cadTelefone
     });
-
     localStorage.setItem('listaUser', JSON.stringify(listaUser));
+    setUsersCount(listaUser.length);
     alert('Cadastro realizado com sucesso!');
-    navigate('/');
+    navigate('/home');
   };
 
-  // Função que é executada APÓS a validação do formulário de login
   const onSubmitLogin: SubmitHandler<LoginData> = (data) => {
-    console.log('Dados de login válidos:', data);
+    console.log('Login realizado:', data);
     alert('Login realizado com sucesso!');
-    navigate('/');
+    navigate('/home');
   };
-
-  // O handleChange, validateCPF, etc., foram removidos pois o react-hook-form cuida de tudo.
 
   return (
     <main className="flex-1 bg-gray-100 flex justify-center items-center p-4">
@@ -66,8 +71,13 @@ const LoginRegister: React.FC = () => {
           </button>
         </div>
 
+        {pageLoadTime && (
+          <div className="text-sm text-gray-500 mb-4 text-center">
+            Página carregada às: {pageLoadTime.toLocaleTimeString()}
+          </div>
+        )}
+
         {activeForm === 'login' && (
-          // O handleSubmit do hook form valida os campos antes de chamar nossa função onSubmitLogin
           <form onSubmit={handleSubmitLogin(onSubmitLogin)} className="space-y-4">
             <div>
               <label htmlFor="loginCPF" className="block text-sm font-medium text-gray-700 mb-1">
@@ -78,15 +88,12 @@ const LoginRegister: React.FC = () => {
                 id="loginCPF"
                 placeholder="Digite seu CPF"
                 className={`w-full p-2 border rounded-md ${errorsLogin.loginCPF ? 'border-red-500' : 'border-gray-300'}`}
-                // O 'register' conecta o input ao hook form e aplica as regras de validação
                 {...registerLogin('loginCPF', {
                   required: 'O CPF é obrigatório',
                   minLength: { value: 11, message: 'O CPF deve ter 11 dígitos' },
                   maxLength: { value: 11, message: 'O CPF deve ter 11 dígitos' },
-                  
                 })}
               />
-              {/* Exibindo a mensagem de erro que vem do hook form */}
               {errorsLogin.loginCPF && <p className="text-red-500 text-sm mt-1">{errorsLogin.loginCPF.message}</p>}
             </div>
 
@@ -118,9 +125,14 @@ const LoginRegister: React.FC = () => {
           </form>
         )}
 
-        {/* --- Formulário de Cadastro Refatorado --- */}
         {activeForm === 'cadastro' && (
           <form onSubmit={handleSubmitCadastro(onSubmitCadastro)} className="space-y-4">
+            <div className="text-center mb-2">
+              <span className="text-sm text-gray-600">
+                Usuários cadastrados: <strong>{usersCount}</strong>
+              </span>
+            </div>
+
             <div>
               <label htmlFor="nome" className="block text-sm font-medium text-gray-700 mb-1">
                 Nome Completo

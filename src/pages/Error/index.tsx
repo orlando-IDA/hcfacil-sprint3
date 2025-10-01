@@ -19,7 +19,7 @@ const Error: React.FC = () => {
         <h1 className="text-6xl font-bold text-gray-900 mb-4">404</h1>
         <h2 className="text-2xl font-semibold text-gray-800 mb-4">Página não encontrada</h2>
         <p className="text-gray-600 mb-8">
-          A página que você está tentando acessar não existe ou foi movida.
+          A página que você está tentando acessar não existe ou foi removida.
         </p>
 
         {/* Botões de ação */}
